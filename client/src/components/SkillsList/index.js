@@ -29,7 +29,7 @@ const SkillsList = ({ skills, isLoggedInUser = false }) => {
   };
 
   if (!skills.length) {
-    return <h3>Nothing for sale</h3>;
+    return <h3>There's nothing for sale here!</h3>;
   }
 
   return (
