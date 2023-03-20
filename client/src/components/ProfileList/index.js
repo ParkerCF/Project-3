@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ProfileList = ({ profiles, title }) => {
   if (!profiles.length) {
-    return <h3>No Profiles Yet</h3>;
+    return <h3>There are no profiles available!</h3>;
   }
 
   return (
@@ -17,9 +17,11 @@ const ProfileList = ({ profiles, title }) => {
                 <h4 className="card-header bg-dark text-light p-2 m-0">
                   {profile.name} <br />
                   <span className="text-white" style={{ fontSize: '1rem' }}>
-                    currently has {profile.skills ? profile.skills.length : 0}{' '}
+                    currently has {profile.skills
+                      ? profile.skills.length : 0}{' '}
                     items for sale
-                    {profile.skills && profile.skills.length === 1 ? '' : 's'}
+                    {profile.skills &&
+                      profile.skills.length === 1 ? '' : 's'}
                   </span>
                 </h4>
 
@@ -27,7 +29,7 @@ const ProfileList = ({ profiles, title }) => {
                   className="btn btn-block btn-squared btn-light text-dark"
                   to={`/profiles/${profile._id}`}
                 >
-                  View and buy their products.
+                  View and purchase the products below.
                 </Link>
               </div>
             </div>

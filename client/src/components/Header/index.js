@@ -17,7 +17,7 @@ const Header = () => {
           </h1>
         </Link>
         <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
-          Buy some stuff or sell your stuff.
+            Check out our wide selection of products.
         </p>
         <div>
           {Auth.loggedIn() ? (
