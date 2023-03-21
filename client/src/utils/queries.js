@@ -29,7 +29,11 @@ export const QUERY_ME = gql`
     me {
       _id
       name
-      skills
+      skills {
+        name
+        description
+        price
+      }
     }
   }
 `;

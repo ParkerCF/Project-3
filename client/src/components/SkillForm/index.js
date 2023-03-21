@@ -25,9 +25,10 @@ const SkillForm = ({ profileId }) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
+    const conversionSkill = {...skill, price: parseFloat(skill.price)};
     try {
       const data = await addSkill({
-        variables: { profileId, skill },
+        variables: { profileId, skill:conversionSkill },
       });
 
       setSkill('');
