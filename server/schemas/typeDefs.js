@@ -1,13 +1,20 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+type SkillSchema {
+  name: String
+  description: String
+  price: Float
+}
+
   type Profile {
     _id: ID
     name: String
     email: String
     password: String
-    skills: [String]!
+    skills: [SkillSchema]!
   }
+
 
   type Auth {
     token: ID!
@@ -25,9 +32,15 @@ const typeDefs = gql`
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
-    addSkill(profileId: ID!, skill: String!): Profile
+    addSkill(profileId: ID!, skill: Skill): Profile
     removeProfile: Profile
     removeSkill(skill: String!): Profile
+  }
+
+  input Skill {
+    name: String
+    description: String
+    price: Float
   }
 `;
 

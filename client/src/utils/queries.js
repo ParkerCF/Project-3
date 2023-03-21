@@ -5,7 +5,11 @@ export const QUERY_PROFILES = gql`
     profiles {
       _id
       name
-      skills
+      skills {
+        name
+        description
+        price
+      }
     }
   }
 `;

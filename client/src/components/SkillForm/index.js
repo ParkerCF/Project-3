@@ -7,9 +7,20 @@ import { ADD_SKILL } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
 const SkillForm = ({ profileId }) => {
-  const [skill, setSkill] = useState('');
+  const [skill, setSkill] = useState({name: '', description: '', price: ''});
 
   const [addSkill, { error }] = useMutation(ADD_SKILL);
+
+ const handleInputChange = (event) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    setSkill({
+      ...skill,
+      [name]: value
+    });
+  };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -36,10 +47,25 @@ const SkillForm = ({ profileId }) => {
         >
           <div className="col-12 col-lg-9">
             <input
-              placeholder="Describe your product"
-              value={skill}
+              placeholder="Product Name"
+              name="name"
+              value={skill.name}
               className="form-input w-100"
-              onChange={(event) => setSkill(event.target.value)}
+              onChange={(event) => handleInputChange(event)}
+            />
+            <input
+              placeholder="Price"
+              name="price"
+              value={skill.price}
+              className="form-input w-100"
+              onChange={(event) => handleInputChange(event)}
+            />
+            <input
+              placeholder="Description"
+              name="description"
+              value={skill.description}
+              className="form-input w-100"
+              onChange={(event) => handleInputChange(event)}
             />
           </div>
 

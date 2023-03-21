@@ -13,11 +13,12 @@ export const ADD_PROFILE = gql`
 `;
 
 export const ADD_SKILL = gql`
-  mutation addSkill($profileId: ID!, $skill: String!) {
+  mutation addSkill($profileId: ID!, $skill: Skill) {
     addSkill(profileId: $profileId, skill: $skill) {
       _id
       name
-      skills
+      price
+      description
     }
   }
 `;
