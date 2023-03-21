@@ -47,6 +47,7 @@ const resolvers = {
     // Add a third argument to the resolver to access data in our `context`
     addSkill: async (parent, { profileId, skill }, context) => {
       // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
+      console.log(skill)
       if (context.user) {
         return Profile.findOneAndUpdate(
           { _id: profileId },

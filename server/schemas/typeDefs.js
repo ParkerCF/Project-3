@@ -34,7 +34,7 @@ type SkillSchema {
 
     addSkill(profileId: ID!, skill: Skill): Profile
     removeProfile: Profile
-    removeSkill(skill: String!): Profile
+    removeSkill(skill: Skill): Profile
   }
 
   input Skill {
