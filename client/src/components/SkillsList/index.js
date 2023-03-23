@@ -21,7 +21,7 @@ const SkillsList = ({ skills, isLoggedInUser = false }) => {
   const handleRemoveSkill = async (skill) => {
     try {
       const { data } = await removeSkill({
-        variables: { skill },
+        variables: { skill: { _id: skill._id, name: skill.name } },
       });
     } catch (err) {
       console.error(err);
@@ -37,7 +37,7 @@ const SkillsList = ({ skills, isLoggedInUser = false }) => {
       <div className="flex-row justify-space-between my-4">
         {skills &&
           skills.map((skill) => (
-            <div key={skill.name} className="col-12 col-xl-6">
+            <div key={skill.id} className="col-12 col-xl-6">
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0 display-flex align-center">
                   <span>{skill.name}</span>

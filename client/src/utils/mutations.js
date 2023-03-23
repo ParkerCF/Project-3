@@ -24,8 +24,8 @@ mutation login($email: String!, $password: String!) {
     }
   }
   `;
-  
-  export const REMOVE_SKILL = gql`
+
+export const REMOVE_SKILL = gql`
   mutation removeSkill($skill: Skill) {
     removeSkill(skill: $skill) {
       _id
@@ -38,8 +38,8 @@ mutation login($email: String!, $password: String!) {
     }
   }
   `;
-  
-  export const ADD_SKILL = gql`
+
+export const ADD_SKILL = gql`
     mutation addSkill($profileId: ID!, $skill: Skill) {
       addSkill(profileId: $profileId, skill: $skill) {
         _id
