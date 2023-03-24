@@ -24,7 +24,7 @@ const Profile = () => {
   // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
   const profile = data?.me || data?.profile || {};
 
-  console.log(profile)
+  console.log(profile.email)
   // Use React Router's `<Navigate />` component to redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data._id === profileId) {
     return <Navigate to="/me" />;
@@ -48,6 +48,9 @@ const Profile = () => {
       <h2 className="card-header">
         {profileId ? `${profile.name} has` : 'You have'} listed these items...
       </h2>
+      <h3 className="card-header">
+        {profileId ? `${profile.name}` : 'You'} can be reached at {profile.email}
+      </h3>
 
       {profile.skills?.length > 0 && (
         <SkillsList
