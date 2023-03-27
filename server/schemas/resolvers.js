@@ -45,14 +45,14 @@ const resolvers = {
     },
 
     // Add a third argument to the resolver to access data in our `context`
-    addSkill: async (parent, { profileId, skill }, context) => {
+    addProduct: async (parent, { profileId, product }, context) => {
       // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
-      console.log(skill)
+      console.log(product)
       if (context.user) {
         return Profile.findOneAndUpdate(
           { _id: profileId },
           {
-            $addToSet: { skills: skill },
+            $addToSet: { products: product },
           },
           {
             new: true,
@@ -75,11 +75,11 @@ const resolvers = {
 
 
     // Make it so a logged in user can only remove a skill from their own profile
-    removeSkill: async (parent, { skill }, context) => {
+    removeProduct: async (parent, { product }, context) => {
       if (context.user) {
         return Profile.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { skills: { name: skill.name } } }, //match name and remove the skill
+          { $pull: { products: { name: product.name } } }, //match name and remove the skill
           { new: true }
         );
       }

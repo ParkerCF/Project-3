@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_SKILL } from '../../utils/mutations';
+import { ADD_PRODUCT } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
-const SkillForm = ({ profileId }) => {
-  const [skill, setSkill] = useState({name: '', description: '', price: ''});
+const ProductForm = ({ profileId }) => {
+  const [product, setProduct] = useState({name: '', description: '', price: ''});
 
-  const [addSkill, { error }] = useMutation(ADD_SKILL);
+  const [addProduct, { error }] = useMutation(ADD_PRODUCT);
 
  const handleInputChange = (event) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
-    setSkill({
-      ...skill,
+    setProduct({
+      ...product,
       [name]: value
     });
   };
@@ -25,13 +25,13 @@ const SkillForm = ({ profileId }) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    const conversionSkill = {...skill, price: parseFloat(skill.price)};
+    const conversionProduct = {...product, price: parseFloat(product.price)};
     try {
-      const data = await addSkill({
-        variables: { profileId, skill:conversionSkill },
+      const data = await addProduct({
+        variables: { profileId, product:conversionProduct },
       });
 
-      setSkill('');
+      setProduct('');
     } catch (err) {
       console.error(err);
     }
@@ -50,21 +50,21 @@ const SkillForm = ({ profileId }) => {
             <input
               placeholder="Product Name"
               name="name"
-              value={skill.name}
+              value={product.name}
               className="form-input w-100"
               onChange={(event) => handleInputChange(event)}
             />
             <input
               placeholder="Price"
               name="price"
-              value={skill.price}
+              value={product.price}
               className="form-input w-100"
               onChange={(event) => handleInputChange(event)}
             />
             <input
               placeholder="Description"
               name="description"
-              value={skill.description}
+              value={product.description}
               className="form-input w-100"
               onChange={(event) => handleInputChange(event)}
             />
@@ -91,4 +91,4 @@ const SkillForm = ({ profileId }) => {
   );
 };
 
-export default SkillForm;
+export default ProductForm;
