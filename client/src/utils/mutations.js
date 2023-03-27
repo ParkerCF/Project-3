@@ -25,12 +25,12 @@ mutation login($email: String!, $password: String!) {
   }
   `;
 
-export const REMOVE_SKILL = gql`
-  mutation removeSkill($skill: Skill) {
-    removeSkill(skill: $skill) {
+export const REMOVE_PRODUCT = gql`
+  mutation removeProduct($product: Product) {
+    removeProduct(product: $product) {
       _id
       name
-      skills {
+      products {
         name
         description
         price
@@ -39,12 +39,12 @@ export const REMOVE_SKILL = gql`
   }
   `;
 
-export const ADD_SKILL = gql`
-    mutation addSkill($profileId: ID!, $skill: Skill) {
-      addSkill(profileId: $profileId, skill: $skill) {
+export const ADD_PRODUCT = gql`
+    mutation addProduct($profileId: ID!, $product: Product) {
+      addProduct(profileId: $profileId, product: $product) {
         _id
         name
-        skills {
+        products {
           name
           description
           price

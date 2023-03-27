@@ -8,6 +8,7 @@ import { QUERY_PROFILES } from '../utils/queries';
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PROFILES);
   const profiles = data?.profiles || [];
+  console.log(profiles);
 
   return (
     <main>
@@ -26,5 +27,6 @@ const Home = () => {
     </main>
   );
 };
+
 
 export default Home;

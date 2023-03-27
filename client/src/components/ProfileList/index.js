@@ -17,11 +17,11 @@ const ProfileList = ({ profiles, title }) => {
                 <h4 className="card-header bg-dark text-light p-2 m-0">
                   {profile.name} <br />
                   <span className="text-white" style={{ fontSize: '1rem' }}>
-                    currently has {profile.skills
-                      ? profile.skills.length : 0}{' '}
+                    currently has {profile.products
+                      ? profile.products.length : 0}{' '}
                     items for sale
-                    {profile.skills &&
-                      profile.skills.length === 1 ? '' : 's'}
+                    {profile.products &&
+                      profile.products.length === 1 ? '' : 's'}
                   </span>
                 </h4>
 

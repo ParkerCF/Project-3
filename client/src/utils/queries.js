@@ -5,7 +5,7 @@ export const QUERY_PROFILES = gql`
     profiles {
       _id
       name
-      skills {
+      products {
         name
         description
         price
@@ -20,7 +20,7 @@ export const QUERY_SINGLE_PROFILE = gql`
       _id
       name
       email
-      skills {
+      products {
         name
         description
         price
@@ -35,7 +35,7 @@ export const QUERY_ME = gql`
       _id
       name
       email
-      skills {
+      products {
         name
         description
         price
