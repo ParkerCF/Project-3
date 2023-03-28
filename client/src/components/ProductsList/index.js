@@ -1,9 +1,9 @@
-import React from 'react';
-import { useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useMutation } from "@apollo/client";
+import { Link } from "react-router-dom";
 
-import { REMOVE_PRODUCT } from '../../utils/mutations';
-import { QUERY_ME } from '../../utils/queries';
+import { REMOVE_PRODUCT } from "../../utils/mutations";
+import { QUERY_ME } from "../../utils/queries";
 
 const ProductsList = ({ products, isLoggedInUser = false }) => {
   const [removeProduct, { error }] = useMutation(REMOVE_PRODUCT, {
@@ -55,7 +55,7 @@ const ProductsList = ({ products, isLoggedInUser = false }) => {
                   className="btn btn-block btn-squared btn-light text-dark"
                   to={`/products/${product._id}`}
                 >
-                    View and purchase this product.
+                  View and purchase this product.
                 </Link>
               </div>
             </div>

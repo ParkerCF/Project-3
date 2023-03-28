@@ -1,12 +1,12 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-type ProductSchema {
-  _id: ID
-  name: String
-  description: String
-  price: Float
-}
+  type ProductSchema {
+    _id: ID
+    name: String
+    description: String
+    price: Float
+  }
 
   type Profile {
     _id: ID
@@ -15,7 +15,6 @@ type ProductSchema {
     password: String
     products: [ProductSchema]!
   }
-
 
   type Auth {
     token: ID!
