@@ -6,6 +6,7 @@ export const QUERY_PROFILES = gql`
       _id
       name
       products {
+        _id
         name
         description
         price
@@ -21,6 +22,7 @@ export const QUERY_SINGLE_PROFILE = gql`
       name
       email
       products {
+        _id
         name
         description
         price
@@ -36,10 +38,22 @@ export const QUERY_ME = gql`
       name
       email
       products {
+        _id
         name
         description
         price
       }
+    }
+  }
+`;
+
+export const QUERY_SINGLE_PRODUCT = gql`
+  query product($productId: ID!) {
+    product(productId: $productId) {
+      _id
+      name
+      description
+      price
     }
   }
 `;

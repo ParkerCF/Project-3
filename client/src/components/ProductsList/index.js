@@ -1,5 +1,6 @@
 import React from 'react';
 import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
 import { REMOVE_PRODUCT } from '../../utils/mutations';
 import { QUERY_ME } from '../../utils/queries';
@@ -37,7 +38,7 @@ const ProductsList = ({ products, isLoggedInUser = false }) => {
       <div className="flex-row justify-space-between my-4">
         {products &&
           products.map((product) => (
-            <div key={product.id} className="col-12 col-xl-6">
+            <div key={product._id} className="col-12 col-xl-6">
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0 display-flex align-center">
                   <span>{product.name}</span>
@@ -50,6 +51,12 @@ const ProductsList = ({ products, isLoggedInUser = false }) => {
                     </button>
                   )}
                 </h4>
+                <Link
+                  className="btn btn-block btn-squared btn-light text-dark"
+                  to={`/products/${product._id}`}
+                >
+                    View and purchase this product.
+                </Link>
               </div>
             </div>
           ))}

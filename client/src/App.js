@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Profile from './pages/Profile';
+import Product from './pages/Product';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from './components/Header';
@@ -63,6 +64,10 @@ function App() {
               <Route 
                 path="/profiles/:profileId" 
                 element={<Profile />} 
+              />
+              <Route
+                path="/products/:productId"
+                element={<Product />}
               />
             </Routes>
           </div>
