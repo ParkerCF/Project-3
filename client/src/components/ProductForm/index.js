@@ -1,37 +1,41 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 
-import { ADD_PRODUCT } from '../../utils/mutations';
+import { ADD_PRODUCT } from "../../utils/mutations";
 
-import Auth from '../../utils/auth';
+import Auth from "../../utils/auth";
 
 const ProductForm = ({ profileId }) => {
-  const [product, setProduct] = useState({name: '', description: '', price: ''});
+  const [product, setProduct] = useState({
+    name: "",
+    description: "",
+    price: "",
+  });
 
   const [addProduct, { error }] = useMutation(ADD_PRODUCT);
 
- const handleInputChange = (event) => {
+  const handleInputChange = (event) => {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
 
     setProduct({
       ...product,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    const conversionProduct = {...product, price: parseFloat(product.price)};
+    const conversionProduct = { ...product, price: parseFloat(product.price) };
     try {
       const data = await addProduct({
-        variables: { profileId, product:conversionProduct },
+        variables: { profileId, product: conversionProduct },
       });
 
-      setProduct('');
+      setProduct("");
     } catch (err) {
       console.error(err);
     }
@@ -83,7 +87,7 @@ const ProductForm = ({ profileId }) => {
         </form>
       ) : (
         <p>
-          You need to be logged in to list an item for sale. Please{' '}
+          You need to be logged in to list an item for sale. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

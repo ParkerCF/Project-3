@@ -14,7 +14,7 @@ const Product = () => {
 
   const product = data?.product || {};
 
-//   console.log(product);
+  //   console.log(product);
   console.log(productId);
 
   if (loading) {
@@ -26,17 +26,15 @@ const Product = () => {
   }
 
   return (
-
-
     <div key={product.id}>
       <h2 className="card-header">
         <span>Item: {product.name} </span>
       </h2>
       <h3>
-      <span>Price: {product.price} dollars</span>
+        <span>Price: {product.price} dollars</span>
       </h3>
       <h4>
-      <span>Description: {product.description}</span>
+        <span>Description: {product.description}</span>
       </h4>
     </div>
   );

@@ -3,29 +3,34 @@
     "name": "Max Kanat-Alexander",
     "email": "mkanatalexander@techfriends.dev",
     "password": "password02",
-    "products": [{
-      "name": "iPhone X",
-      "description": "The best iPhone ever made",
-      "price": 999.99
-    },
-  {
-    "name": "Xbox 360",
-    "description": "The best Xbox ever made",
-    "price": 299.99
-  }]
+    "products": [
+      {
+        "name": "iPhone X",
+        "description": "The best iPhone ever made",
+        "price": 999.99
+      },
+      {
+        "name": "Xbox 360",
+        "description": "The best Xbox ever made",
+        "price": 299.99
+      }
+    ]
   },
   {
     "name": "Amiko",
     "email": "amiko@techfriends.dev",
     "password": "password03",
-    "products": [{
-      "name": "iPhone X",
-      "description": "The best iPhone ever made",
-      "price": 999.99
-    },
-  {
-    "name": "Xbox 360",
-    "description": "The best Xbox ever made",
-    "price": 299.99
-  }]
-  }]
+    "products": [
+      {
+        "name": "iPhone X",
+        "description": "The best iPhone ever made",
+        "price": 999.99
+      },
+      {
+        "name": "Xbox 360",
+        "description": "The best Xbox ever made",
+        "price": 299.99
+      }
+    ]
+  }
+]

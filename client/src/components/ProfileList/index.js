@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ProfileList = ({ profiles, title }) => {
   if (!profiles.length) {
@@ -16,12 +16,13 @@ const ProfileList = ({ profiles, title }) => {
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0">
                   {profile.name} <br />
-                  <span className="text-white" style={{ fontSize: '1rem' }}>
-                    currently has {profile.products
-                      ? profile.products.length : 0}{' '}
-                    items for sale
-                    {profile.products &&
-                      profile.products.length === 1 ? '' : 's'}
+                  <span className="text-white" style={{ fontSize: "1rem" }}>
+                    currently has{" "}
+                    {profile.products ? profile.products.length : 0} items for
+                    sale
+                    {profile.products && profile.products.length === 1
+                      ? ""
+                      : "s"}
                   </span>
                 </h4>
 
