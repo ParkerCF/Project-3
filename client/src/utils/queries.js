@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+// queries all profiles
 export const QUERY_PROFILES = gql`
   query allProfiles {
     profiles {
@@ -15,6 +16,7 @@ export const QUERY_PROFILES = gql`
   }
 `;
 
+// queries single profile
 export const QUERY_SINGLE_PROFILE = gql`
   query singleProfile($profileId: ID!) {
     profile(profileId: $profileId) {
@@ -31,6 +33,7 @@ export const QUERY_SINGLE_PROFILE = gql`
   }
 `;
 
+// queries logged in user
 export const QUERY_ME = gql`
   query me {
     me {
@@ -47,6 +50,7 @@ export const QUERY_ME = gql`
   }
 `;
 
+// queries single product
 export const QUERY_SINGLE_PRODUCT = gql`
   query product($productId: ID!) {
     product(productId: $productId) {
