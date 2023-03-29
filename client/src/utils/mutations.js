@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+// adds profile to database
 export const ADD_PROFILE = gql`
   mutation addProfile($name: String!, $email: String!, $password: String!) {
     addProfile(name: $name, email: $email, password: $password) {
@@ -12,6 +13,7 @@ export const ADD_PROFILE = gql`
   }
 `;
 
+// logs in user
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -24,6 +26,7 @@ export const LOGIN_USER = gql`
   }
 `;
 
+// removes profile from database
 export const REMOVE_PRODUCT = gql`
   mutation removeProduct($productId: ID!) {
     removeProduct(productId: $productId) {
@@ -38,6 +41,7 @@ export const REMOVE_PRODUCT = gql`
   }
 `;
 
+// adds product to profile
 export const ADD_PRODUCT = gql`
   mutation addProduct($profileId: ID!, $product: Product) {
     addProduct(profileId: $profileId, product: $product) {
