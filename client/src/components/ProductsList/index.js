@@ -22,7 +22,7 @@ const ProductsList = ({ products, isLoggedInUser = false }) => {
   const handleRemoveProduct = async (product) => {
     try {
       const { data } = await removeProduct({
-        variables: { product: { _id: product._id, name: product.name } },
+        variables: { productId: product._id },
       });
     } catch (err) {
       console.error(err);

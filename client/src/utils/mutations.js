@@ -25,8 +25,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const REMOVE_PRODUCT = gql`
-  mutation removeProduct($product: Product) {
-    removeProduct(product: $product) {
+  mutation removeProduct($productId: ID!) {
+    removeProduct(productId: $productId) {
       _id
       name
       products {

@@ -35,7 +35,12 @@ const ProductForm = ({ profileId }) => {
         variables: { profileId, product: conversionProduct },
       });
 
-      setProduct("");
+      setProduct(
+        {
+          name: "",
+          description: "",
+          price: "",
+        });
     } catch (err) {
       console.error(err);
     }

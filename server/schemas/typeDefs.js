@@ -35,7 +35,7 @@ const typeDefs = gql`
 
     addProduct(profileId: ID!, product: Product): Profile
     removeProfile: Profile
-    removeProduct(product: Product): Profile
+    removeProduct(productId: ID!): Profile
   }
 
   input Product {
