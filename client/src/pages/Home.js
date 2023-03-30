@@ -10,6 +10,7 @@ const Home = () => {
   const profiles = data?.profiles || [];
   console.log(profiles);
 
+  // returning the ProfileList component to the "home" page
   return (
     <main>
       <div className="flex-row justify-center">

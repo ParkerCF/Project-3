@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// importing the ProfileList component
 const ProfileList = ({ profiles, title }) => {
   if (!profiles.length) {
     return <h3>There are no profiles available!</h3>;
   }
 
+  // returning the ProfileList component to the "home" page
   return (
     <div>
       <h3 className="text-primary">{title}</h3>

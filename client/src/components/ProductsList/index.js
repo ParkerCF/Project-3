@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { REMOVE_PRODUCT } from "../../utils/mutations";
 import { QUERY_ME } from "../../utils/queries";
 
+// importing the ProductsList component
 const ProductsList = ({ products, isLoggedInUser = false }) => {
   const [removeProduct, { error }] = useMutation(REMOVE_PRODUCT, {
     update(cache, { data: { removeProduct } }) {
@@ -19,6 +20,7 @@ const ProductsList = ({ products, isLoggedInUser = false }) => {
     },
   });
 
+  // removeProduct function
   const handleRemoveProduct = async (product) => {
     try {
       const { data } = await removeProduct({
@@ -33,6 +35,7 @@ const ProductsList = ({ products, isLoggedInUser = false }) => {
     return <h3>There's nothing for sale here!</h3>;
   }
 
+  // returning the product information to the "product" page and checking if the user is logged in to render the remove button
   return (
     <div>
       <div className="flex-row justify-space-between my-4">

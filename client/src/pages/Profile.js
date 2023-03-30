@@ -34,6 +34,7 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
+  // If `profile` is undefined, then the profile with the given `profileId` doesn't exist, so return an error message
   if (!profile?.name) {
     return (
       <h4>
@@ -43,6 +44,7 @@ const Profile = () => {
     );
   }
 
+  // returning the profile information to the "profile" page
   return (
     <div>
       <h2 className="card-header">
