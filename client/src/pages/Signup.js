@@ -6,6 +6,7 @@ import { ADD_PROFILE } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
+// Signup component
 const Signup = () => {
   const [formState, setFormState] = useState({
     name: "",
@@ -40,6 +41,7 @@ const Signup = () => {
     }
   };
 
+  // returning the signup form to the "signup" page and redirecting to the homepage if the user is logged in
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">

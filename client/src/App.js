@@ -16,10 +16,12 @@ import Login from "./pages/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+// establish a link to the back-end server
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
 
+// use the setContext() method to set the HTTP request headers
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
   const token = localStorage.getItem("id_token");
@@ -32,11 +34,13 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+// create a new Apollo client using the link created above
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
+// wrap the entire app in the ApolloProvider component
 function App() {
   return (
     <ApolloProvider client={client}>
