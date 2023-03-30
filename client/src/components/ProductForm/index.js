@@ -6,6 +6,7 @@ import { ADD_PRODUCT } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 
+// ProductForm component
 const ProductForm = ({ profileId }) => {
   const [product, setProduct] = useState({
     name: "",
@@ -26,6 +27,7 @@ const ProductForm = ({ profileId }) => {
     });
   };
 
+  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -35,12 +37,18 @@ const ProductForm = ({ profileId }) => {
         variables: { profileId, product: conversionProduct },
       });
 
-      setProduct("");
+      setProduct(
+        {
+          name: "",
+          description: "",
+          price: "",
+        });
     } catch (err) {
       console.error(err);
     }
   };
 
+  // returning the form to add a product to the "profile" page
   return (
     <div>
       <h4>List another item for sale.</h4>

@@ -83,11 +83,11 @@ const resolvers = {
     },
 
     // Make it so a logged in user can only remove a skill from their own profile
-    removeProduct: async (parent, { product }, context) => {
+    removeProduct: async (parent, { productId }, context) => {
       if (context.user) {
         return Profile.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { products: { name: product.name } } }, //match name and remove the skill
+          { $pull: { products: { _id: productId } } }, //match name and remove the skill
           { new: true }
         );
       }

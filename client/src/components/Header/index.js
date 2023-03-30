@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 
 import Auth from "../../utils/auth";
 
-
+// Header component
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
+  
   return (
     <header className="bg-info text-dark py-3 space-between align-center">
       <div className="container flex-column justify align-center">

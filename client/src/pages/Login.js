@@ -5,6 +5,7 @@ import { LOGIN_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
+// Login component
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -40,6 +41,7 @@ const Login = (props) => {
     });
   };
 
+  // returning the login form to the "login" page and redirecting to the homepage if the user is logged in
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">

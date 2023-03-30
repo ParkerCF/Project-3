@@ -25,6 +25,7 @@ const Product = () => {
     return <h4>There is no such product</h4>;
   }
 
+  // returning the product information to the "product" page
   return (
     <div key={product.id}>
       <h2 className="card-header">
