@@ -74,6 +74,36 @@ const resolvers = {
       // If user attempts to execute this mutation and isn't logged in, throw an error
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    updateProduct: async (parent, { profileId, name, product }) => {
+      console.log(profileId);
+      if (profileId) {
+        const user = await Profile.findById(profileId);
+        if (!user) {
+          throw new AuthenticationError('No profile found with this id');
+        }
+
+        // Find the product to be updated
+        const productToUpdate = user.products.find(
+          (prod) => prod.name === name
+        );
+
+        if (!productToUpdate) {
+          throw new AuthenticationError('No product found with this name for this user');
+        }
+
+        // Update the product
+        Object.assign(productToUpdate, product);
+
+        await user.save();
+        return user;
+      }
+
+      throw new AuthenticationError('You need to be logged in to perform this action');
+    },
+
+
+
     // Set up mutation so a logged in user can only remove their profile and no one else's
     removeProfile: async (parent, args, context) => {
       if (context.user) {
