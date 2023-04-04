@@ -1,28 +1,50 @@
-# Pass JWT to Resolver with Context (Server-side)
 
-In this demo, you will verify if a token is valid and carry
+  # Greg's List
 
-## Instructions
+  ## Description
+Greg's List is a website where you can list any item for sale. You can also browse different user's items as well. Once you find something you like, simply click the product and reach out via email to let the user know you're interested. (Further development on the way)
 
-* Run `npm install` and `npm run seed` to set up the database.
+  ## Table of Contents
+  * [Project Links](#links)
+  * [Usage](#usage)
+  * [Credits](#credits)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
 
-* Open [server.js](server/server.js) and explain the following:
+  ## Links
+  * [Deployed Application](https://project3challenge.herokuapp.com/)
+  * [GitHub Repo](https://github.com/ParkerCF/Project-3)
 
-  * We can add another option to our Apollo Server configuration called `context`, which is a lot like middleware in Express.
+  ## Usage
+To get started, navigate to the deployed application link. You can browse through different user's profiles and view all the items they have for sale with a title, price, and description of the item. If you'd like to list an item for sale, you'll have to create an account by pressing the `SIGN UP` button in the navbar. Once your account is created, press the `VIEW MY SELLER PROFILE` button, you will then be presented with a form to add a product. Once the product has been created you will see that the product name is present on your profile, click the product if you want to see more information or press the `X` to delete it. You will only be able to update your own product if you are the logged in user, if not you will be met with an INTENTIONAL error.
 
-  * This will allow us to intercept any request to the server and check if there's a valid JWT before the request gets to the resolver.
+  ## Credits
+  * [W3Schools](https://www.w3schools.com/)
+  * [Readme.so](https://readme.so/)
+  * [Stack Overflow](https://stackoverflow.com)
+  * [MongoDB](https://www.mongodb.com/)
+  * [React](https://react.dev/)
 
-* Open [auth.js](server/utils/auth.js) and explain the `authMiddleware` function:
 
-  * Whenever we make a request to our server, we will check if there's a token with the request and attempt to verify and decode it if there is.
 
-  * We use the `return` statement to return the `req` object, either modified with user data or not modified at all, and the request will continue to go to its intended resolver function.
+  
+  ## License
+  
+  ![](https://img.shields.io/badge/License-MIT-blue.svg)
+  This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license.
 
-* Open [resolvers.js](server/schemas/resolvers.js) and explain the following:
+    
 
-  * Any time we need to implement authentication on a query or mutation, we can add a third parameter called `context` to the resolver function.
+  ## Contributing
+  * [Parker Faul](https://github.com/ParkerCF)
+  * [Jeaustin Sanabria](https://github.com/jeaustins27)
+  * [Ryan Carless](https://github.com/ryancarless96)
+  * [Rabia Khalid](https://github.com/rabia-desing)
 
-  * The `context` object is whatever has been returned from our `authMiddleware` function, so it may or may not include a `user` property depending on the status of the JSON Web Token.
+  ## Tests
+  There are no current tests to be ran.
 
-  * If there is a `user` property, we can assume the user's token has been verified and the `user` property now holds data about the user that we stored in the token itself.
-
+  ## Questions
+  If you have any questions you can reach out to any of us on our GitHub Repos above.
