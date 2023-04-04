@@ -44,7 +44,7 @@ const ProductsList = ({ products, isLoggedInUser = false }) => {
             <div key={product._id} className="col-12 col-xl-6">
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0 display-flex align-center">
-                  <span>{product.name}</span>
+                  <span class="productName">{product.name}</span>
                   {isLoggedInUser && (
                     <button
                       className="btn btn-sm btn-danger ml-auto"
