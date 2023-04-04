@@ -55,3 +55,18 @@ export const ADD_PRODUCT = gql`
     }
   }
 `;
+
+// update product
+export const UPDATE_PRODUCT = gql`
+  mutation updateProduct($profileId: ID!,$name:String!, $product: Product) {
+    updateProduct(profileId: $profileId,name:$name ,product: $product) {
+      _id
+      name
+      products {
+        name
+        description
+        price
+      }
+    }
+  }
+`;

@@ -34,6 +34,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
 
     addProduct(profileId: ID!, product: Product): Profile
+    updateProduct(profileId: ID!, name: String!, product: Product): Profile
     removeProfile: Profile
     removeProduct(productId: ID!): Profile
   }

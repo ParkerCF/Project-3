@@ -6,7 +6,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
+  line-height: 3;
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
@@ -18,14 +18,14 @@ html {
  * Remove the margin in all browsers.
  */
 body {
-  margin: 0;
+  margin: 4;
 }
 
 /**
  * Render the `main` element consistently in IE.
  */
 main {
-  display: block;
+  display: flexbox;
 }
 
 /**
@@ -69,7 +69,7 @@ pre {
  * Remove the gray background on active links in IE 10.
  */
 a {
-  background-color: transparent;
+  background-color: aquamarine;
 }
 
 /**
@@ -924,7 +924,7 @@ a:hover {
 }
 
 .bg-info {
-  background-color: #1bbc9b !important;
+  background-color: aquamarine !important;
 }
 
 .bg-danger {
@@ -1057,7 +1057,7 @@ a:hover {
 }
 
 .btn.btn-white {
-  background-color: #ffffff;
+  background-color: aquamarine;
   color: #1a1a1a;
 }
 
@@ -1075,7 +1075,7 @@ a:hover {
 }
 
 .btn.btn-link {
-  background-color: #1b89bc;
+  background-color: #7eb3cc;
   color: #ffffff;
 }
 

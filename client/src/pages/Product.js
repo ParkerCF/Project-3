@@ -2,7 +2,7 @@ import React from "react";
 
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-
+import EditBtn from '../components/ProductsList/EditBtn';
 import { QUERY_SINGLE_PRODUCT } from "../utils/queries";
 
 const Product = () => {
@@ -37,6 +37,7 @@ const Product = () => {
       <h4>
         <span>Description: {product.description}</span>
       </h4>
+      <EditBtn pId={productId} />
     </div>
   );
 };
